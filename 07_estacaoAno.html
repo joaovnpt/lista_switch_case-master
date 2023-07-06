@@ -1,0 +1,89 @@
+<meta charset="UTF-8">
+<script>
+    /*
+    //PROBLEMA: Faça um script que pergunte para a pessoa em qual hemisfério ela está e qual o mês atual.
+    De acordo com as respostas, informe qual a estação do ano correspondente.
+    */
+
+    const hem = prompt("Informe em qual hemisfério você se localiza, use S para Sul e N para norte.").trim().toLocaleUpperCase();
+    const mes = prompt("Informe o mês atual.").trim().toLowerCase();
+    let estacao = "";
+
+    if ((hem == "N" || hem == "S") && (mes == "janeiro" || mes == "fevereiro" || mes == "março" || mes == "abril" || mes == "maio" || mes == "junho" || mes == "julho" || mes == "agosto" || mes == "setembro" || mes == "outubro" || mes == "novembro" || mes == "dezembro")) {
+        switch (hem) {
+            case "S":
+                switch (mes) {
+                    case "março":
+                    case "abril":
+                    case "maio":
+                        estacao = "outono";
+                        break;
+                    case "junho":
+                    case "julho":
+                    case "agosto": estacao = "inverno";
+                        break;
+
+                    case "setembro":
+                    case "outubro":
+                    case "novembro": estacao = "primavera";
+                        break;
+
+                    case "dezembro":
+                    case "janeiro":
+                    case "fevereiro": estacao = "verão";
+                        break;
+                }
+                alert(`Você está no(a) ${estacao}`)
+        }
+
+        switch (hem) {
+            case "N":
+                break;
+                switch (mes) {
+                    case "março":
+                    case "abril":
+                    case "maio": estacao = "primavera";
+                        break;
+
+                    case "junho":
+                    case "julho":
+                    case "agosto": estacao = "verão";
+                        break;
+
+                    case "setembro":
+                    case "outubro":
+                    case "novembro": estacao = "outono";
+                        break;
+
+                    case "dezembro":
+                    case "janeiro":
+                    case "fevereiro": estacao = "inverno";
+                        break;
+                }
+                break;
+                alert(`Você está no(a) ${estacao}`)
+        }
+    }
+    else {
+        alert("Dados inválidos.")
+    }
+
+
+
+    /*
+        Norte:
+    
+        verão no Hemisfério sul: 20 ou 21 de dezembro.
+       outono no Hemisfério sul: 20 ou 21 de março.
+       inverno no Hemisfério sul: 20 ou 21 de junho.
+       primavera no Hemisfério sul: 22 ou 23 de setembro.
+    
+       Sul:
+    
+       inverno no Hemisfério norte: 20 ou 21 de dezembro.
+       primavera no Hemisfério norte: 20 ou 21 de março.
+       verão no Hemisfério norte: 20 ou 21 de junho.
+       outono no Hemisfério norte: 22 ou 23 de setembro.
+    
+    */
+</script>
